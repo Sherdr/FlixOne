@@ -3,7 +3,7 @@
         private readonly bool isTerminatingCommand;
         protected IUserInterface Interface { get; }
 
-        internal InventoryCommand(bool commandIsTerminating, IUserInterface userInterface) {
+        protected InventoryCommand(bool commandIsTerminating, IUserInterface userInterface) {
             Interface = userInterface;
             isTerminatingCommand = commandIsTerminating;
         }
