@@ -6,9 +6,8 @@
             isTerminatingCommand = commandIsTerminating;
         }
 
-        public bool RunCommand(out bool shouldQuit) {
-            shouldQuit = isTerminatingCommand;
-            return InternalCommand();
+        public (bool wasSuccessful, bool shouldQuit) RunCommand() {
+            return (InternalCommand(), isTerminatingCommand);
         }
 
         internal abstract bool InternalCommand();
