@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35303.130
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlixOne.InventoryManagement", "FlixOne.InventoryManagement\FlixOne.InventoryManagement.csproj", "{AC5F9AD4-0E92-4084-943B-5C416511380D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlixOne.InventoryManagementClient", "FlixOne.InventoryManagementClient\FlixOne.InventoryManagementClient.csproj", "{11082EE6-A06D-4FD3-971D-56481C0B911C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FlixOne.InventoryManagementTests", "FlixOne.InventoryManagementTests\FlixOne.InventoryManagementTests.csproj", "{EBB21E46-8A9A-4C8C-94C5-F08D6DF24E1E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC5F9AD4-0E92-4084-943B-5C416511380D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC5F9AD4-0E92-4084-943B-5C416511380D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC5F9AD4-0E92-4084-943B-5C416511380D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC5F9AD4-0E92-4084-943B-5C416511380D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11082EE6-A06D-4FD3-971D-56481C0B911C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11082EE6-A06D-4FD3-971D-56481C0B911C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11082EE6-A06D-4FD3-971D-56481C0B911C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11082EE6-A06D-4FD3-971D-56481C0B911C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB21E46-8A9A-4C8C-94C5-F08D6DF24E1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB21E46-8A9A-4C8C-94C5-F08D6DF24E1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB21E46-8A9A-4C8C-94C5-F08D6DF24E1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB21E46-8A9A-4C8C-94C5-F08D6DF24E1E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {97ABE8AC-8C20-49C1-AABA-45E7C975FC66}
+	EndGlobalSection
+EndGlobal
