@@ -1,8 +1,10 @@
 ﻿namespace FlixOne.InventoryManagement {
     public abstract class InventoryCommand {
         private readonly bool isTerminatingCommand;
+        protected IUserInterface Interface { get; }
 
-        internal InventoryCommand(bool commandIsTerminating) {
+        internal InventoryCommand(bool commandIsTerminating, IUserInterface userInterface) {
+            Interface = userInterface;
             isTerminatingCommand = commandIsTerminating;
         }
 
@@ -14,6 +16,10 @@
                 }
             }
             return (InternalCommand(), isTerminatingCommand);
+        }
+
+        internal string GetParameter(string parameterName) {
+            return Interface.ReadValue($"Enter {parameterName}:");
         }
 
         internal abstract bool InternalCommand();

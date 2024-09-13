@@ -1,13 +1,13 @@
 ﻿namespace FlixOne.InventoryManagement {
-    public class AddInventoryCommand : InventoryCommand, IParameterisedCommand {
+    internal class AddInventoryCommand : NonTerminatingCommand, IParameterisedCommand {
         public string InventoryName { get; private set; }
 
-        public AddInventoryCommand() : base(false) {
+        public AddInventoryCommand(IUserInterface userInterface) : base(userInterface) {
         }
 
         public bool GetParameters() {
             if (string.IsNullOrWhiteSpace(InventoryName)) {
-                //InventoryName = GetParameter();
+                InventoryName = GetParameter("name");
             }
             return !string.IsNullOrWhiteSpace(InventoryName);
         }

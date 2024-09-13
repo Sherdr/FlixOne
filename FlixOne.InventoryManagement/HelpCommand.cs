@@ -1,9 +1,11 @@
 ﻿namespace FlixOne.InventoryManagement {
     internal class HelpCommand : NonTerminatingCommand {
+        public HelpCommand(IUserInterface userInterface) : base(userInterface) { }
+
         internal override bool InternalCommand() {
-            Console.WriteLine("USAGE:");
-            Console.WriteLine("\t Add to inventory (a)");
-            Console.WriteLine("Examples:");
+            Interface.WriteMessage("USAGE:");
+            Interface.WriteMessage("\t Add to inventory (a)");
+            Interface.WriteMessage("Examples:");
             return true;
         }
     }

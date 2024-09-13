@@ -1,5 +1,5 @@
 ﻿namespace FlixOne.InventoryManagement {
-    public class ConsoleUserInterface {
+    public class ConsoleUserInterface : IUserInterface {
         public string ReadValue(string message) {
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(message);
