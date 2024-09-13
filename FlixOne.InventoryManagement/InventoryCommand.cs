@@ -1,8 +1,16 @@
 ﻿namespace FlixOne.InventoryManagement {
-    public class InventoryCommand {
-        public bool RunCommand(out bool shouldQuit) {
-            shouldQuit = false;
-            return true;
+    public abstract class InventoryCommand {
+        private readonly bool isTerminatingCommand;
+
+        internal InventoryCommand(bool commandIsTerminating) {
+            isTerminatingCommand = commandIsTerminating;
         }
+
+        public bool RunCommand(out bool shouldQuit) {
+            shouldQuit = isTerminatingCommand;
+            return InternalCommand();
+        }
+
+        internal abstract bool InternalCommand();
     }
 }

@@ -18,7 +18,7 @@ namespace FlixOne.InventoryManagementClient {
         }
 
         private static InventoryCommand GetCommand(string? input) {
-            return new InventoryCommand();
+            return new HelpCommand();
         }
 
         private static void Greeting() {
