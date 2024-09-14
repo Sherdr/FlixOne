@@ -1,6 +1,7 @@
-﻿using FlixOne.InventoryManagement;
+﻿using FlixOne.InventoryManagement.Interfaces;
 
-namespace FlixOne.InventoryManagementTests {
+namespace FlixOne.InventoryManagementTests
+{
     internal class TestUserInterface : IUserInterface {
         private int expectedWriteWarningRequestsIndex;
         public List<string> expectedWriteWarningRequests;

@@ -1,4 +1,4 @@
-using FlixOne.InventoryManagement;
+using FlixOne.InventoryManagement.Services;
 
 namespace FlixOne.InventoryManagementTests {
 
