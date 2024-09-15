@@ -4,10 +4,11 @@ namespace FlixOne.InventoryManagement.Services
 {
     internal class AddInventoryCommand : NonTerminatingCommand, IParameterisedCommand
     {
+        private readonly IInventoryContext context;
         public string InventoryName { get; private set; }
 
-        public AddInventoryCommand(IUserInterface userInterface) : base(userInterface)
-        {
+        public AddInventoryCommand(IUserInterface userInterface, IInventoryContext context) : base(userInterface){
+            this.context = context;
         }
 
         public bool GetParameters()
@@ -21,7 +22,7 @@ namespace FlixOne.InventoryManagement.Services
 
         internal override bool InternalCommand()
         {
-            throw new NotImplementedException();
+            return context.AddBook(InventoryName);
         }
     }
 }

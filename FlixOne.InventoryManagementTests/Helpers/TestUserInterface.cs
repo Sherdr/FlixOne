@@ -1,8 +1,9 @@
 ﻿using FlixOne.InventoryManagement.Interfaces;
 
-namespace FlixOne.InventoryManagementTests
+namespace FlixOne.InventoryManagementTests.Helpers
 {
-    internal class TestUserInterface : IUserInterface {
+    internal class TestUserInterface : IUserInterface
+    {
         private int expectedWriteWarningRequestsIndex;
         public List<string> expectedWriteWarningRequests;
 
@@ -12,7 +13,8 @@ namespace FlixOne.InventoryManagementTests
         private int expectedReadValueRequestsIndex;
         public List<(string, string)> expectedReadValueRequests;
 
-        public string ReadValue(string message) {
+        public string ReadValue(string message)
+        {
             Assert.IsTrue(expectedReadValueRequestsIndex < expectedReadValueRequests.Count,
                 "Received too many command read value requests.");
             Assert.AreEqual(expectedReadValueRequests[expectedReadValueRequestsIndex].Item1, message,
@@ -20,21 +22,24 @@ namespace FlixOne.InventoryManagementTests
             return expectedReadValueRequests[expectedReadValueRequestsIndex++].Item2;
         }
 
-        public void WriteMessage(string message) {
+        public void WriteMessage(string message)
+        {
             Assert.IsTrue(expectedWriteMessageRequestsIndex < expectedWriteMessageRequests.Count,
                 "Received too many command write message requests.");
             Assert.AreEqual(expectedWriteMessageRequests[expectedWriteMessageRequestsIndex++], message,
                 "Received unexpected command write message");
         }
 
-        public void WriteWarning(string message) {
+        public void WriteWarning(string message)
+        {
             Assert.IsTrue(expectedWriteWarningRequestsIndex < expectedWriteWarningRequests.Count,
                 "Received too many command write warning requests.");
             Assert.AreEqual(expectedWriteWarningRequests[expectedWriteWarningRequestsIndex++], message,
                 "Received unexpected command write warning message");
         }
 
-        public void Validate() {
+        public void Validate()
+        {
             Assert.IsTrue(expectedReadValueRequestsIndex == expectedReadValueRequests.Count,
                 "Not all read requests were performed.");
             Assert.IsTrue(expectedWriteMessageRequestsIndex == expectedWriteMessageRequests.Count,
