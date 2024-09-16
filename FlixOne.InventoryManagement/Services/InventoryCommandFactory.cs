@@ -3,7 +3,7 @@ using FlixOne.InventoryManagement.Repositories;
 using System.Reflection.Metadata;
 
 namespace FlixOne.InventoryManagement.Services {
-    public class InventoryCommandFactory {
+    public class InventoryCommandFactory : IInventoryCommandFactory{
         private readonly IUserInterface userInterface;
         private readonly IInventoryContext inventoryContext = InventoryContext.Singleton;
 
