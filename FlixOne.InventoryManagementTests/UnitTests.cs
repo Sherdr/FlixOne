@@ -29,8 +29,24 @@ namespace FlixOne.InventoryManagementTests {
         }
 
         [TestMethod]
-        public void GetInventoryCommand_Successful() {
-            Assert.Inconclusive("GetInventoryCommand_Successful has not been implemented.");
+         public void GetInventoryCommand_Successful() {
+            var expectedInterface = new TestUserInterface{
+                expectedReadValueRequests = new List<(string, string)>(),
+                expectedWriteMessageRequests = new List<string> { "Gremlins\tQuantity:7", "Willsong\tQuantity:3" },
+                expectedWriteWarningRequests = new List<string>()
+            };
+            var context = new TestInventoryContext(new Dictionary<string, Book> {
+                { "Gremlins", new Book { Id = 1, Name = "Gremlins", Quantity = 7} },
+                { "Willsong", new Book { Id = 2, Name = "Willsong", Quantity = 3} }
+            });
+            var command = new GetInventoryCommand(expectedInterface, context);
+            var result = command.RunCommand();
+
+            Assert.IsFalse(result.shouldQuit, "GetInventory is not a terminating command.");
+            Assert.IsTrue(result.wasSuccessful, "GetInventory did not complete successfully.");
+
+            Assert.AreEqual(0, context.GetAddedBooks().Length, "GetInventory should not have added any books.");
+            Assert.AreEqual(0, context.GetUpdatedBooks().Length, "GetInventory should not have update any books.");
         }
 
         [TestMethod]
@@ -48,6 +64,7 @@ namespace FlixOne.InventoryManagementTests {
             var command = new QuitCommand(expectedInterface);
             var result = command.RunCommand();
             expectedInterface.Validate();
+
             Assert.IsTrue(result.shouldQuit, "Quit is a terminating command");
             Assert.IsTrue(result.wasSuccessful, "Quit did not complete Successfully");
         }
