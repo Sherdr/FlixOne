@@ -1,4 +1,5 @@
-﻿using FlixOne.InventoryManagement.Services;
+﻿using FlixOne.InventoryManagement.Repositories;
+using FlixOne.InventoryManagement.Services;
 using FlixOne.InventoryManagementTests.Helpers;
 
 namespace FlixOne.InventoryManagementTests {
@@ -13,7 +14,7 @@ namespace FlixOne.InventoryManagementTests {
                 new List<string>(),
                 new List<string>()
             );
-            Factory = new InventoryCommandFactory(expectedInterface);
+            Factory = new InventoryCommandFactory(expectedInterface, new InventoryContext());
         }
 
         [TestMethod]
