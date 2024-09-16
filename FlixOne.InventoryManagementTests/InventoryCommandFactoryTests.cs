@@ -34,5 +34,12 @@ namespace FlixOne.InventoryManagementTests {
             Assert.IsInstanceOfType(Factory.GetCommand("h"), typeof(UnknownCommand), "unmatched command should be UnknownCommand.");
             Assert.IsInstanceOfType(Factory.GetCommand("help"), typeof(UnknownCommand), "unmatched command should be UnknownCommand.");
         }
+
+        [TestMethod]
+        public void UpdateQuantity_Successful() {
+            Assert.IsInstanceOfType(Factory.GetCommand("u"), typeof(UpdateQuantityCommand), "u should be UpdateQuantityCommand.");
+            Assert.IsInstanceOfType(Factory.GetCommand("updatequantity"), typeof(UpdateQuantityCommand), "updatequantity should be UpdateQuantityCommand.");
+            Assert.IsInstanceOfType(Factory.GetCommand("updateQuantity"), typeof(UpdateQuantityCommand), "updatequantity should be UpdateQuantityCommand.");
+        }
     }
 }

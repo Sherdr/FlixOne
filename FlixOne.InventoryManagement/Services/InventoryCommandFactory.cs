@@ -12,7 +12,7 @@ namespace FlixOne.InventoryManagement.Services {
         }
 
         public InventoryCommand GetCommand(string input) {
-            switch (input) {
+            switch (input.ToLower()) {
                 case "q":
                 case "quit":
                     return new QuitCommand(userInterface);
@@ -23,7 +23,7 @@ namespace FlixOne.InventoryManagement.Services {
                 case "getinventory":
                     return new GetInventoryCommand(userInterface, inventoryContext);
                 case "u":
-                case "updateinventory":
+                case "updatequantity":
                     return new UpdateQuantityCommand(userInterface, inventoryContext);
                 case "?":
                     return new HelpCommand(userInterface);
