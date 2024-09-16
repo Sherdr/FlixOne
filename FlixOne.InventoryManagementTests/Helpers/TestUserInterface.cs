@@ -5,13 +5,19 @@ namespace FlixOne.InventoryManagementTests.Helpers
     internal class TestUserInterface : IUserInterface
     {
         private int expectedWriteWarningRequestsIndex;
-        public List<string> expectedWriteWarningRequests;
+        private List<string> expectedWriteWarningRequests;
 
         private int expectedWriteMessageRequestsIndex;
-        public List<string> expectedWriteMessageRequests;
+        private List<string> expectedWriteMessageRequests;
 
         private int expectedReadValueRequestsIndex;
-        public List<(string, string)> expectedReadValueRequests;
+        private List<(string, string)> expectedReadValueRequests;
+
+        public TestUserInterface(List<(string, string)> expectedReadValue, List<string> expectedWriteMessage, List<string> expectedWriteWarning) {
+            expectedReadValueRequests = expectedReadValue;
+            expectedWriteMessageRequests = expectedWriteMessage;
+            expectedWriteWarningRequests = expectedWriteWarning;
+        }
 
         public string ReadValue(string message)
         {
