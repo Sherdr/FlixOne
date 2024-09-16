@@ -7,7 +7,7 @@ namespace FlixOne.InventoryManagement.Services
         public string ReadValue(string message)
         {
             Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine(message);
+            Console.Write(message);
             return Console.ReadLine();
         }
 

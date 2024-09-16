@@ -24,7 +24,7 @@ namespace FlixOne.InventoryManagement.Services {
         }
 
         private void Greeting() {
-            throw new NotImplementedException();
+            userInterface.WriteWarning("Welcome to FlixOne Inventory Management System.");
         }
     }
 }

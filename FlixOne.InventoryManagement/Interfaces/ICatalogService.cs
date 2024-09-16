@@ -1,5 +1,5 @@
 ﻿namespace FlixOne.InventoryManagement.Interfaces {
-    internal interface ICatalogService {
+    public interface ICatalogService {
         void Run();
     }
 }

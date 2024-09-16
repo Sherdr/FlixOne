@@ -1,28 +1,23 @@
-﻿using FlixOne.InventoryManagement;
+﻿using FlixOne.InventoryManagement.Interfaces;
+using FlixOne.InventoryManagement.Services;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace FlixOne.InventoryManagementClient {
     internal class Program {
         static void Main(string[] args) {
-            Greeting();
-            //GetCommand("?").RunCommand(out bool shouldQuit);
-            //while (!shouldQuit) {
-            //    Console.WriteLine(" > ");
-            //    var input = Console.ReadLine();
-            //    var command = GetCommand(input);
-            //    var wasSuccessful = command.RunCommand(out shouldQuit);
-            //    if (!wasSuccessful) {
-            //        Console.WriteLine("Enter ? to view options.");
-            //    }
-            //}
+            var services = new ServiceCollection();
+            ConfigureServices(services);
+            var provider = services.BuildServiceProvider();
+            var catalog = provider.GetService<ICatalogService>();
+            catalog.Run();
+
             Console.WriteLine("CatalogService has completed.");
         }
 
-        //private static InventoryCommand GetCommand(string? input) {
-        //    return new HelpCommand();
-        //}
-
-        private static void Greeting() {
-            throw new NotImplementedException();
+        static void ConfigureServices(IServiceCollection services) {
+            services.AddTransient<IUserInterface, ConsoleUserInterface>();
+            services.AddTransient<ICatalogService, CatalogService>();
+            services.AddTransient<IInventoryCommandFactory, InventoryCommandFactory>();
         }
     }
 }
