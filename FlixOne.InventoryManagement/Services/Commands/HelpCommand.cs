@@ -1,6 +1,6 @@
 ﻿using FlixOne.InventoryManagement.Interfaces;
 
-namespace FlixOne.InventoryManagement.Services
+namespace FlixOne.InventoryManagement.Services.Commands
 {
     internal class HelpCommand : NonTerminatingCommand
     {

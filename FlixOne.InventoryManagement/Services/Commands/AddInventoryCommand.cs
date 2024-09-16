@@ -1,13 +1,14 @@
 ﻿using FlixOne.InventoryManagement.Interfaces;
 
-namespace FlixOne.InventoryManagement.Services
+namespace FlixOne.InventoryManagement.Services.Commands
 {
     internal class AddInventoryCommand : NonTerminatingCommand, IParameterisedCommand
     {
-        private readonly IInventoryContext context;
+        private readonly IInventoryWriteContext context;
         public string InventoryName { get; private set; }
 
-        public AddInventoryCommand(IUserInterface userInterface, IInventoryContext context) : base(userInterface){
+        public AddInventoryCommand(IUserInterface userInterface, IInventoryWriteContext context) : base(userInterface)
+        {
             this.context = context;
         }
 

@@ -1,8 +1,10 @@
 ﻿using FlixOne.InventoryManagement.Interfaces;
 using FlixOne.InventoryManagement.Repositories;
+using FlixOne.InventoryManagement.Services.Commands;
 using System.Reflection.Metadata;
 
-namespace FlixOne.InventoryManagement.Services {
+namespace FlixOne.InventoryManagement.Services
+{
     public class InventoryCommandFactory : IInventoryCommandFactory{
         private readonly IUserInterface userInterface;
         private readonly IInventoryContext inventoryContext;

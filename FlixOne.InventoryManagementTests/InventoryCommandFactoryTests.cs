@@ -1,8 +1,10 @@
 ﻿using FlixOne.InventoryManagement.Repositories;
 using FlixOne.InventoryManagement.Services;
+using FlixOne.InventoryManagement.Services.Commands;
 using FlixOne.InventoryManagementTests.Helpers;
 
-namespace FlixOne.InventoryManagementTests {
+namespace FlixOne.InventoryManagementTests
+{
     [TestClass]
     public class InventoryCommandFactoryTests {
         InventoryCommandFactory Factory { get; set; }
@@ -20,7 +22,13 @@ namespace FlixOne.InventoryManagementTests {
         [TestMethod]
         public void QuitCommand_Successful() {
             Assert.IsInstanceOfType(Factory.GetCommand("q"), typeof(QuitCommand), "q should be QuitCommand.");
-            Assert.IsInstanceOfType(Factory.GetCommand("quit"), typeof(QuitCommand), "q should be QuitCommand.");
+            Assert.IsInstanceOfType(Factory.GetCommand("quit"), typeof(QuitCommand), "quit should be QuitCommand.");
+        }
+
+        [TestMethod]
+        public void AddInventoryCommand_Successful() {
+            Assert.IsInstanceOfType(Factory.GetCommand("a"), typeof(AddInventoryCommand), "a should be AddInventoryCommand.");
+            Assert.IsInstanceOfType(Factory.GetCommand("addinventory"), typeof(AddInventoryCommand), "addinventory should be AddInventoryCommand.");
         }
 
         [TestMethod]
@@ -40,7 +48,7 @@ namespace FlixOne.InventoryManagementTests {
         public void UpdateQuantity_Successful() {
             Assert.IsInstanceOfType(Factory.GetCommand("u"), typeof(UpdateQuantityCommand), "u should be UpdateQuantityCommand.");
             Assert.IsInstanceOfType(Factory.GetCommand("updatequantity"), typeof(UpdateQuantityCommand), "updatequantity should be UpdateQuantityCommand.");
-            Assert.IsInstanceOfType(Factory.GetCommand("updateQuantity"), typeof(UpdateQuantityCommand), "updatequantity should be UpdateQuantityCommand.");
+            Assert.IsInstanceOfType(Factory.GetCommand("updateQuantity"), typeof(UpdateQuantityCommand), "updateQuantity should be UpdateQuantityCommand.");
         }
     }
 }

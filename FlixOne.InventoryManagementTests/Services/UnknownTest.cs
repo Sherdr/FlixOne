@@ -1,11 +1,15 @@
 ﻿using FlixOne.InventoryManagement.Services;
+using FlixOne.InventoryManagement.Services.Commands;
 using FlixOne.InventoryManagementTests.Helpers;
 
-namespace FlixOne.InventoryManagementTests {
+namespace FlixOne.InventoryManagementTests.Services
+{
     [TestClass]
-    public class UnknownTest {
+    public class UnknownTest
+    {
         [TestMethod]
-        public void UnknownCommand_Successful() {
+        public void UnknownCommand_Successful()
+        {
             var expectedInterface = new TestUserInterface(
                 new List<(string, string)>(),
                 new List<string>(),

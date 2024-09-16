@@ -1,7 +1,6 @@
 ﻿using FlixOne.InventoryManagement.Interfaces;
 using FlixOne.InventoryManagement.Repositories;
 using Microsoft.Extensions.DependencyInjection;
-using System.Security.Authentication.ExtendedProtection;
 
 namespace FlixOne.InventoryManagementTests {
     [TestClass]

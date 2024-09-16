@@ -1,12 +1,16 @@
 ﻿using FlixOne.InventoryManagement.Models;
 using FlixOne.InventoryManagement.Services;
+using FlixOne.InventoryManagement.Services.Commands;
 using FlixOne.InventoryManagementTests.Helpers;
 
-namespace FlixOne.InventoryManagementTests {
+namespace FlixOne.InventoryManagementTests.Services
+{
     [TestClass]
-    public class AddInventoryTest {
+    public class AddInventoryTest
+    {
         [TestMethod]
-        public void AddInventoryCommand_Successful() {
+        public void AddInventoryCommand_Successful()
+        {
             var expectedBookName = "AddInventoryUnitTest";
             var expectedInterface = new TestUserInterface(
                 new List<(string, string)> { ("Enter name:", expectedBookName) },

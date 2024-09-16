@@ -1,4 +1,5 @@
 ﻿using FlixOne.InventoryManagement.Interfaces;
+using FlixOne.InventoryManagement.Services.Commands;
 
 namespace FlixOne.InventoryManagement.Services
 {

@@ -19,7 +19,10 @@ namespace FlixOne.InventoryManagementClient {
             services.AddTransient<IUserInterface, ConsoleUserInterface>();
             services.AddTransient<ICatalogService, CatalogService>();
             services.AddTransient<IInventoryCommandFactory, InventoryCommandFactory>();
-            services.AddSingleton<IInventoryContext, InventoryContext>();
+            var context = new InventoryContext();
+            services.AddSingleton<IInventoryReadContext, InventoryContext>(provider => context);
+            services.AddSingleton<IInventoryWriteContext, InventoryContext>(provider => context);
+            services.AddSingleton<IInventoryContext, InventoryContext>(provider => context);
         }
     }
 }

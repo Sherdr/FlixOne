@@ -1,12 +1,16 @@
 ﻿using FlixOne.InventoryManagement.Models;
 using FlixOne.InventoryManagement.Services;
+using FlixOne.InventoryManagement.Services.Commands;
 using FlixOne.InventoryManagementTests.Helpers;
 
-namespace FlixOne.InventoryManagementTests {
+namespace FlixOne.InventoryManagementTests.Services
+{
     [TestClass]
-    public class GetInventoryTest {
+    public class GetInventoryTest
+    {
         [TestMethod]
-        public void GetInventoryCommand_Successful() {
+        public void GetInventoryCommand_Successful()
+        {
             var expectedInterface = new TestUserInterface(
                 new List<(string, string)>(),
                 new List<string> { "Gremlins\tQuantity:7", "Willsong\tQuantity:3" },

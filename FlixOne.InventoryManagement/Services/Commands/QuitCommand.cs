@@ -2,7 +2,7 @@
 using FlixOne.InventoryManagement.Interfaces;
 [assembly: InternalsVisibleTo("FlixOne.InventoryManagementTests")]
 
-namespace FlixOne.InventoryManagement.Services
+namespace FlixOne.InventoryManagement.Services.Commands
 {
     internal class QuitCommand : InventoryCommand
     {

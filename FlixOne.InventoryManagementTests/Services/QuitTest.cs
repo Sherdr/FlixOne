@@ -1,12 +1,16 @@
 ﻿using FlixOne.InventoryManagement.Services;
+using FlixOne.InventoryManagement.Services.Commands;
 using FlixOne.InventoryManagementTests.Helpers;
 
-namespace FlixOne.InventoryManagementTests {
+namespace FlixOne.InventoryManagementTests.Services
+{
     [TestClass]
-    public class QuitTest {
+    public class QuitTest
+    {
 
         [TestMethod]
-        public void QuitCommand_Successful() {
+        public void QuitCommand_Successful()
+        {
             var expectedInterface = new TestUserInterface(
                 new List<(string, string)>(),
                 new List<string> { "Thank you for using FlixOne Inventory Management System." },
